@@ -1,0 +1,68 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - mood_happy
+  - mood_sad
+  - mood_bored
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you doing today?"
+    buttons:
+      - title: Happy
+        payload: /mood_happy
+      - title: Sad
+        payload: /mood_sad
+      - title: Bored
+        payload: /mood_bored
+
+  utter_mood_sad:
+  - text: "Here is something to cheer you up: \n
+          1. Reading a favorite book (https://openlibrary.org/) \n
+          2. listen to soothing music. (https://wynk.in/music) \n
+          3. Reach out to a trusted friend or loved one for support. \n
+          4. Engage in hobbies (Open que - fetch the hobbies from db??) \n
+          5. Engage in gentle meditation or deep breathing exercises. (https://www.youtube.com/watch?v=TW2-gN9m_KQ)"
+
+
+  utter_mood_happy:
+  - text: "Here is something to cheer you up: \n
+          1. Engage in light exercises like chair yoga or stretching. (https://www.youtube.com/watch?v=laIWV6qJWbk) \n
+          2. Listen to their favorite music or participate in a sing-along session.(https://wynk.in/music) \n
+          3. Look through old photo albums or scrapbooks to evoke happy memories. \n
+          4. Engage in arts and crafts activities such as painting or coloring.(https://www.greatseniorliving.com/articles/crafts-for-seniors) \n
+          5. Arrange a visit or video call with loved ones or friends."
+
+  utter_mood_bored:
+  - text: "Here is something to cheer you up: \n
+          1. Explore a new hobby or learn a new skill online. \n
+          2. can I suggest you games (https://www.bgames.com/) \n
+          3. Experiment with a new recipe or try cooking a favorite dish. \n
+          4. Plan a day trip to explore nearby attractions or visit museums and art galleries."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
